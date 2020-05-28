@@ -6,6 +6,8 @@
  */
 export default class Utils {
     /**
+     * TODO: this must use the formula parser to do things like:
+     * '/roll 1d20 + 5 + 1d6 + floor(2d6/2)'
      * Rolls a given number of dices of given number of sides.
      *
      * @static
