@@ -1,11 +1,14 @@
-import { serve } from "https://deno.land/std@0.53.0/http/server.ts";
+import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 import Utils from './game/Utils.ts'
 
-const port: number = Number(Deno.env.get("PORT"));
-const s = serve({ port: port });
-console.log(`http://localhost:${port}/`);
+// const port: number = Number(Deno.env.get("PORT")); 
+const port = 3333
 
-for await (const req of s) {
+const router = new Router();
+
+console.log(`Running on port: ${port}`);
+
+router.get('/', (ctx) => {
   const rolledDices = Utils.rollDices(2, 20);
   let dicesSumString = '';
   for(let i = 0; i < rolledDices.rolls.length; i++)
@@ -15,5 +18,12 @@ for await (const req of s) {
     dicesSumString += ' + ';
   }
 
-  req.respond({ body: `rolling 2d20: ${rolledDices.total} = ${dicesSumString}` });
-}
+  ctx.response.body = `rolling 2d20: ${rolledDices.total} = ${dicesSumString}`;
+})
+
+const app = new Application();
+
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+app.listen({port});
