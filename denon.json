@@ -3,7 +3,7 @@
     "allow": ["net", "env"],
     "scripts": {
         "start": {
-            "cmd": "src/index.ts",
+            "cmd": "src/app.ts",
             "env": {
                 "PORT": "3333"
             }
