@@ -44,4 +44,4 @@ export default class Utils {
         const randomKey = list[randomIndex];
         return randomKey;
     }
-};
+}

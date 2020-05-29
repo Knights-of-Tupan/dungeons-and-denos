@@ -15,7 +15,7 @@ router.get('/', (ctx) => {
   {
     dicesSumString += `${rolledDices.rolls[i]}`;
     if(i < rolledDices.rolls.length - 1)
-    dicesSumString += ' + ';
+      dicesSumString += ' + ';
   }
 
   ctx.response.body = `rolling 2d20: ${rolledDices.total} = ${dicesSumString}`;
