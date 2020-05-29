@@ -9,7 +9,7 @@ const router = new Router();
 console.log(`Running on port: ${port}`);
 
 router.get('/', (ctx) => {
-  const rolledDices = Utils.rollDices(2, 20);
+  const rolledDices = Utils.roll(2, 20);
   let dicesSumString = '';
   for(let i = 0; i < rolledDices.rolls.length; i++)
   {
