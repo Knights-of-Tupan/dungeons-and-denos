@@ -1,9 +1,9 @@
 {
     "$schema": "https://deno.land/x/denon/schema.json",
-    "allow": ["net", "env"],
+    "allow": ["net", "env", "read"],
     "scripts": {
         "start": {
-            "cmd": "src/app.ts",
+            "cmd": "./src/server.ts",
             "env": {
                 "PORT": "3333"
             }

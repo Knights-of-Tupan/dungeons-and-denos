@@ -16,6 +16,9 @@ WORKDIR /usr/app
 COPY . .
 
 EXPOSE 3333
+EXPOSE 5432
+
+# RUN deno run --allow-net --allow-read https://deno.land/x/nessie/cli.ts migrate -c ./src/config/nessie.config.ts
 
 CMD ["denon", "start"]
 # CMD ["deno", "run", "--allow-net", "--allow-env", "src/index.ts"]
