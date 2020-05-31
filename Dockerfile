@@ -16,8 +16,10 @@ WORKDIR /usr/app
 COPY . .
 
 EXPOSE 3333
+
 EXPOSE 5432
 
+# TODO: fix connection refused
 # RUN deno run --allow-net --allow-read https://deno.land/x/nessie/cli.ts migrate -c ./src/database/nessie.config.ts
 
 CMD ["denon", "start"]
