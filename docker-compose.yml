@@ -9,7 +9,7 @@ services:
             - "5432:5432"
         volumes: # persist data even if container shuts down volumes
             # TODO: change this later to a real database server - e.g. Amazon RDS
-            - /home/leonardo/Development/postgres-server/data-volume/:/var/lib/postgresql/data/ 
+            - ./temp/postgresql/data/:/var/lib/postgresql/data/ 
 
     app:
         build: .
