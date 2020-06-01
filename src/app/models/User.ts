@@ -1,32 +1,22 @@
-import { DATA_TYPES, Model } from 'https://deno.land/x/denodb/mod.ts';
-import db from '../../database/database.ts';
+import { Model } from "https://deno.land/x/cotton/mod.ts";
+import db from '../../database/db.ts';
 
 class User extends Model {
-  static table = 'users';
-  static timestamps = true;
+  static tableName = 'users';
 
   static fields = {
-    id: {
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name: {
-      type: DATA_TYPES.STRING,
-      allowNull: false,
-      length: 50,
-    },
-    email: {
-      type: DATA_TYPES.STRING,
-      unique: true,
-      allowNull: false,
-      length: 50,
-    },
-    password_hash: {
-      type: DATA_TYPES.STRING,
-      allowNull: false,
-      length: 50,
-    },
+    id: Number,
+    name: String,
+    email: String,
+    password_hash: String,
+    created_at: Date,
+    updated_at: Date,
   };
+
+  public id!: number;
+  public name!: string;
+  public email!: string;
+  public created_at!: Date;
 }
 
-db.link([User]);
+db.addModel(User);
