@@ -105,3 +105,9 @@ dist
 
 # Visual Studio Code files
 .vscode/
+
+# Temporary files, like db-data
+temp/
+
+# Environment variables
+*.env

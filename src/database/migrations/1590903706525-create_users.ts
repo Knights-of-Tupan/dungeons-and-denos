@@ -8,6 +8,7 @@ export const up = (): string => {
     table.string('name', 50).notNullable();
     table.string('email', 50).notNullable().unique();
     table.string('password_hash', 50).notNullable();
+    // Uncomment this when the lib bug is fixed.
     // table.timestamps();
   });
 

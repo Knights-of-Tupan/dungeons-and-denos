@@ -12,6 +12,8 @@ services:
             - ./temp/postgresql/data/:/var/lib/postgresql/data/ 
 
     app:
+        depends_on:
+            - database
         build: .
         labels:
             - "traefik.enable=true"
