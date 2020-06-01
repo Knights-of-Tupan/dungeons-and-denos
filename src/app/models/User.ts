@@ -1,4 +1,4 @@
-import { DATA_TYPES, Database, Model } from 'https://deno.land/x/denodb/mod.ts';
+import { DATA_TYPES, Model } from 'https://deno.land/x/denodb/mod.ts';
 import db from '../../database/database.ts';
 
 class User extends Model {
