@@ -3,9 +3,9 @@ name: CI
 # Triggers the workflow on push and pull_requests 
 on:
   push:
-    branches: [ master, develop ]
+    branches: [ master, develop, feature/* ]
   pull_request:
-    branches: [ master, develop ]
+    branches: [ master, develop, feature/* ]
   release:
     types: [ published ]
 
