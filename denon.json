@@ -1,18 +1,19 @@
 {
     "$schema": "https://deno.land/x/denon/schema.json",
     "allow": ["net", "env", "read"],
+    "env": {
+        "DENO_ENV": "./.env.test"
+    },
     "scripts": {
         "start": {
             "cmd": "./src/server.ts",
             "env": {
-                "PORT": "3333"
+                "PORT": "3333",
+                "DENO_ENV": "./.env"
             }
         },
         "run_tests": {
-            "cmd": "deno test",
-            "env": {
-                "DENO_ENV": "./.env.test"
-            }
+            "cmd": "deno test"
         }
     }
 }
