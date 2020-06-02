@@ -22,4 +22,4 @@ EXPOSE 5432
 # TODO: fix connection refused
 # RUN deno run --allow-env --allow-net --allow-read https://deno.land/x/nessie/cli.ts migrate -c ./src/database/nessie.config.ts
 
-CMD ["denon", "start"]
+CMD deno run --allow-env --allow-net --allow-read https://deno.land/x/nessie/cli.ts migrate -c ./src/database/nessie.config.ts && denon start
