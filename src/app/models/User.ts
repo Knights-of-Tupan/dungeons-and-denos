@@ -1,4 +1,4 @@
-import { Model } from "https://deno.land/x/cotton/mod.ts";
+import { Model } from 'https://deno.land/x/cotton/mod.ts';
 import db from '../../database/db.ts';
 
 class User extends Model {
@@ -20,3 +20,5 @@ class User extends Model {
 }
 
 db.addModel(User);
+
+export default User;
