@@ -1,19 +1,25 @@
 {
-    "$schema": "https://deno.land/x/denon/schema.json",
-    "allow": ["net", "env", "read"],
-    "env": {
-        "DENO_ENV": "./.env.test"
+  "$schema": "https://deno.land/x/denon/schema.json",
+  "allow": ["net", "env", "read"],
+  "env": {
+    "DENO_ENV": "./.env.test"
+  },
+  "scripts": {
+    "start": {
+      "cmd": "./src/server.ts",
+      "env": {
+        "PORT": "3333",
+        "DENO_ENV": "./.env"
+      }
     },
-    "scripts": {
-        "start": {
-            "cmd": "./src/server.ts",
-            "env": {
-                "PORT": "3333",
-                "DENO_ENV": "./.env"
-            }
-        },
-        "run_tests": {
-            "cmd": "deno test"
-        }
+    "run_tests": {
+      "cmd": "deno test"
     }
+  },
+  "watcher": {
+    "interval": 350,
+    "exts": ["js", "ts", "json"],
+    "match": ["*.*"],
+    "skip": ["*/.git/*", "*/.vscode/*", "*/tests/*", "*/temp/*"]
+  }
 }
