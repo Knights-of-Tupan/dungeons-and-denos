@@ -1,7 +1,7 @@
 import { ClientPostgreSQL } from 'https://deno.land/x/nessie/clients/ClientPostgreSQL.ts';
 import { config } from 'https://deno.land/x/dotenv/mod.ts';
 
-const dbdotenvPath = './database.env';
+const dbdotenvPath: string = Deno.env.get('DENO_ENV') || './.env';
 config({ path: dbdotenvPath, export: true });
 
 const migrationFolder = './src/database/migrations';

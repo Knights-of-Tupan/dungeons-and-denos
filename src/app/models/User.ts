@@ -16,7 +16,9 @@ class User extends Model {
   public id!: number;
   public name!: string;
   public email!: string;
+  public password_hash!: string;
   public created_at!: Date;
+  public updated_at!: Date;
 }
 
 db.addModel(User);

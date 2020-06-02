@@ -19,7 +19,9 @@ EXPOSE 3333
 
 EXPOSE 5432
 
-# TODO: fix connection refused
-# RUN deno run --allow-env --allow-net --allow-read https://deno.land/x/nessie/cli.ts migrate -c ./src/database/nessie.config.ts
-
-CMD deno run --allow-env --allow-net --allow-read https://deno.land/x/nessie/cli.ts migrate -c ./src/database/nessie.config.ts && denon start
+# TODO: find a better way to solve this - make testing optional?
+# migrate and run tests and then migrate real db and start app
+CMD DENO_ENV="./.env.test" deno run --allow-env --allow-net --allow-read https://deno.land/x/nessie/cli.ts \
+    migrate -c ./src/database/nessie.config.ts && DENO_ENV="./.env.test" deno test --allow-env --allow-read --allow-net && \
+    deno run --allow-env --allow-net --allow-read https://deno.land/x/nessie/cli.ts \
+    migrate -c ./src/database/nessie.config.ts && denon start

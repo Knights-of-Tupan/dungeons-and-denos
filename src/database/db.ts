@@ -1,7 +1,7 @@
 import { config } from 'https://deno.land/x/dotenv/mod.ts';
 import { connect } from 'https://deno.land/x/cotton/mod.ts';
 
-const dbdotenvPath = './database.env';
+const dbdotenvPath: string = Deno.env.get('DENO_ENV') || './.env';
 config({ path: dbdotenvPath, export: true });
 
 const db = await connect({
