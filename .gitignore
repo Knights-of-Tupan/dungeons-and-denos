@@ -111,3 +111,5 @@ temp/
 
 # Environment variables
 *.env
+# Except for test env
+!.env.test
