@@ -41,8 +41,7 @@ jobs:
 
       # Migrate databases
       - name: Pre Test 
-        run: DENO_ENV="./.env.test" deno run --allow-env --allow-net --allow-read \ 
-          https://deno.land/x/nessie/cli.ts migrate -c ./src/database/nessie.config.ts 
+        run: DENO_ENV="./.env.test" deno run --allow-env --allow-net --allow-read https://deno.land/x/nessie/cli.ts migrate -c ./src/database/nessie.config.ts 
       
       # Test modules
       - name: Test 
@@ -50,5 +49,4 @@ jobs:
 
       # Rollback databases
       - name: Post Test 
-        run: DENO_ENV="./.env.test" deno run --allow-env --allow-net --allow-read \ 
-          https://deno.land/x/nessie/cli.ts rollback all -c ./src/database/nessie.config.ts 
+        run: DENO_ENV="./.env.test" deno run --allow-env --allow-net --allow-read https://deno.land/x/nessie/cli.ts rollback all -c ./src/database/nessie.config.ts 
