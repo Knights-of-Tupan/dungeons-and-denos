@@ -8,7 +8,7 @@ export const up: Migration = () => {
     table.id();
     table.string('name', 50).notNullable();
     table.string('email', 50).notNullable().unique();
-    table.string('password_hash', 50).notNullable();
+    table.string('password_hash', 100).notNullable();
     table.timestamps();
   });
 
