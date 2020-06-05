@@ -1,3 +1,4 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Knights-of-Tupan/dungeons-and-denos) 
 ![CI](https://github.com/Knights-of-Tupan/dungeons-and-denos/workflows/CI/badge.svg?branch=master)
 
 # Dungeons and Denos

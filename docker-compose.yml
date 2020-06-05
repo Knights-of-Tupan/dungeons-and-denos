@@ -1,7 +1,20 @@
 version: "3"
 
 services:
+    database:
+        image: "postgres" # use latest official postgres version
+        container_name: "postgres_dnd"
+        env_file:
+            - .env # configure postgres
+        ports:
+            - "5432:5432"
+        volumes: # persist data even if container shuts down volumes
+            # TODO: change this later to a real database server - e.g. Amazon RDS
+            - ./temp/postgresql/data/:/var/lib/postgresql/data/ 
+
     app:
+        depends_on:
+            - database
         build: .
         labels:
             - "traefik.enable=true"
