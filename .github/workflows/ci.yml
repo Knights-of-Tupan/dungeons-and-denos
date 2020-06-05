@@ -16,7 +16,7 @@ jobs:
 
     services:
         postgres:
-          container_name: postgres_dnd
+          name: postgres_dnd
           image: postgres
           env:
             POSTGRES_USER: root
