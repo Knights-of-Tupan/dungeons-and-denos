@@ -1,4 +1,4 @@
-![](https://github.com/Knights-of-Tupan/dungeons-and-denos/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Knights-of-Tupan/dungeons-and-denos/workflows/CI/badge.svg?branch=master)
 
 # Dungeons and Denos
 
