@@ -28,7 +28,7 @@ jobs:
             --health-retries 5
             --name postgres_dnd
           ports:
-            - 5000:5432
+            - 5432:5432
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
