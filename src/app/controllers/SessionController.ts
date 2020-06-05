@@ -9,7 +9,7 @@ interface UserCredentials {
 
 /**
  * Responsible for user authentication.
- * TODO: separate error handling in the method.
+ * TODO: Refactor - separate error handling in the method.
  * * ref: https://deno.land/x/oak/examples/routingServer.ts - lines 42:81
  * @class SessionController
  */
@@ -44,7 +44,10 @@ class SessionController {
     }
 
     context.response.status = Status.OK;
-    context.response.body = { user };
+    context.response.body = {
+      user,
+      token: user.generateToken(),
+    };
     context.response.type = 'json';
   }
 }

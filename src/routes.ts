@@ -1,12 +1,19 @@
 import { Router } from 'https://deno.land/x/oak/mod.ts';
 import Utils from './game/Utils.ts';
-import SessionController from './controllers/SessionController.ts'
+import SessionController from './app/controllers/SessionController.ts'
+import authMiddleware from './app/middlewares/auth.ts';
 
 const router = new Router();
 
 router.post('/sessions', SessionController.store);
 
-router.get('/', (ctx) => {
+router.use(authMiddleware);
+
+router.get('/dashboard', (context) => {
+  context.response.body = 'this should be a dashboard';
+});
+
+router.get('/', (context) => {
   const numRolls = 3;
   const rolledDices = Utils.roll(numRolls, 20);
   let dicesSumString = '';
@@ -14,8 +21,8 @@ router.get('/', (ctx) => {
     dicesSumString += `${rolledDices.rolls[i]}`;
     if (i < rolledDices.rolls.length - 1) dicesSumString += ' + ';
   }
-  ctx.response.status = 200;
-  ctx.response.body = `rolling ${numRolls}d20: ${rolledDices.total} = ${dicesSumString}`;
+  context.response.status = 200;
+  context.response.body = `rolling ${numRolls}d20: ${rolledDices.total} = ${dicesSumString}`;
 });
 
 export default router;
