@@ -1,2 +1,22 @@
-# dungeons-and-denos
-Typescript-deno backend for the roleplaying games online platform.
+![](https://github.com/Knights-of-Tupan/dungeons-and-denos/blob/develop/.github/workflows/ci.yml/badge.svg?event=push)
+
+# Dungeons and Denos
+
+A typescript-deno backend + react frontend for an online roleplaying games platform.
+
+## Roadmap
+
+- [ ] Character Sheet
+- [ ] User System
+- [ ] Time System
+- [ ] Online Multiplayer System
+- [ ] Full monetary system with items market
+- [ ] Trading character-character and character-NPC
+- [ ] 2D Grid - show tokens and control
+- [ ] Combat - target, deal damage, heal and other functions
+- [ ] Fog
+- [ ] Wiki with the platform manual and rulebooks
+- [ ] Master support - Generators for Sheets, Loots, Encounters, Dungeons, etc
+- [ ] Map creation system
+- [ ] Sandbox System - Hunger, Thirst, Sleepiness
+- [ ] 3D Grid (maybe WebGL + sprite tricks like Ragnarok Online)
