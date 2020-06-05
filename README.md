@@ -1,4 +1,4 @@
-![GITHUB-BADGE](https://github.com/Knights-of-Tupan/dungeons-and-denos/workflows/ci.yml/badge.svg?event=push)
+![](https://github.com/Knights-of-Tupan/dungeons-and-denos/workflows/ci.yml/badge.svg)
 
 # Dungeons and Denos
 
