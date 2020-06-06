@@ -8,11 +8,11 @@ const migrationFolder = './src/database/migrations';
 
 const configPg: nessieConfig = {
   client: new ClientPostgreSQL(migrationFolder, {
-    database: Deno.env.get('POSTGRES_DB'),
-    hostname: Deno.env.get('POSTGRES_HOSTNAME'),
+    database: Deno.env.get('POSTGRES_DB') || 'postgres',
+    hostname: Deno.env.get('POSTGRES_HOSTNAME') || 'postgres',
     port: Number(Deno.env.get('POSTGRES_PORT')) || 5432,
-    user: Deno.env.get('POSTGRES_USER'),
-    password: Deno.env.get('POSTGRES_PASSWORD'),
+    user: Deno.env.get('POSTGRES_USER') || 'postgres,
+    password: Deno.env.get('POSTGRES_PASSWORD') || 'Postgres2020!',
   }),
 };
 
