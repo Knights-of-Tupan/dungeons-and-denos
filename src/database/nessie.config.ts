@@ -12,7 +12,7 @@ const configPg: nessieConfig = {
     hostname: Deno.env.get('POSTGRES_HOSTNAME') || 'postgres',
     port: Number(Deno.env.get('POSTGRES_PORT')) || 5432,
     user: Deno.env.get('POSTGRES_USER') || 'postgres,
-    password: Deno.env.get('POSTGRES_PASSWORD') || 'Postgres2020!',
+    password: Deno.env.get('POSTGRES_PASSWORD') || 'postgres',
   }),
 };
 
